@@ -23,17 +23,6 @@ public class Employee {
 		return result;
 	}
 
-	/*
-	 * @Override public boolean equals(Object obj) { if (this == obj) return true;
-	 * if (obj == null) return false; if (getClass() != obj.getClass()) return
-	 * false; Employee other = (Employee) obj; if (empId == null) { if (other.empId
-	 * != null) return false; } else if (!empId.equals(other.empId)) return false;
-	 * if (empName == null) { if (other.empName != null) return false; } else if
-	 * (!empName.equals(other.empName)) return false; if (empSalary == null) { if
-	 * (other.empSalary != null) return false; } else if
-	 * (!empSalary.equals(other.empSalary)) return false; return true; }
-	 */
-
 	/**
 	 * @return the empId
 	 */
@@ -54,11 +43,39 @@ public class Employee {
 	public Double getEmpSalary() {
 		return empSalary;
 	}
-	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		if (empId == null) {
+			if (other.empId != null)
+				return false;
+		} else if (!empId.equals(other.empId))
+			return false;
+		if (empName == null) {
+			if (other.empName != null)
+				return false;
+		} else if (!empName.equals(other.empName))
+			return false;
+		if (empSalary == null) {
+			if (other.empSalary != null)
+				return false;
+		} else if (!empSalary.equals(other.empSalary))
+			return false;
+		return true;
+	}
+
 	@Override
 	public String toString() {
 		return "Employee [empId=" + empId + ", empName=" + empName + ", empSalary=" + empSalary + "]";
 	}
+	
+	
 	
 	
 
